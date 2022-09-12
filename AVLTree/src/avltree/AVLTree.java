@@ -21,7 +21,7 @@ public class AVLTree<T extends Comparable<T>> {
             node.setDir(inserirNo(node.getDir(), info));
         } else {
             return node;
-        } // Duplicate infos not allowed
+        }
         return node;
     }
 
