@@ -40,24 +40,24 @@ public class AVLTree<T extends Comparable<T>> {
 
     TreeNode<T> rebalancear(int fatorbalanceamento, TreeNode<T> node, T info) {
         TreeNode<T> aux;
-        if (fatorbalanceamento < -1 && info.compareTo(node.getEsq().getInfo()) < 0) { // Left Left Case
+        if (fatorbalanceamento < -1 && info.compareTo(node.getEsq().getInfo()) < 0) { // Rotacao LL
             System.out.println("Realizando rotação LL apartir do nó "+ node.getInfo());
             aux = rightRotate(node);
             this.raiz = aux;
             return aux;
-        }if(fatorbalanceamento > 1 && info.compareTo(node.getDir().getInfo()) > 0){ // Right Right Case
+        }if(fatorbalanceamento > 1 && info.compareTo(node.getDir().getInfo()) > 0){ // Rotacao RR
             System.out.println("Realizando rotação RR apartir do nó "+ node.getInfo());
             aux = leftRotate(node);
             this.raiz = aux;
             return aux;
-        }if (fatorbalanceamento < -1 && info.compareTo(node.getEsq().getInfo()) > 0){ // Left Right Case
+        }if (fatorbalanceamento < -1 && info.compareTo(node.getEsq().getInfo()) > 0){ // Rotacao LR
             System.out.println("Realizando rotação LR apartir do nó "+ node.getInfo());
             aux = leftRotate(node.getEsq());
             node.setEsq(aux);
             aux = rightRotate(node);
             this.raiz = aux;
             return aux;
-        }if (fatorbalanceamento > 1 && info.compareTo(node.getDir().getInfo()) < 0) { // Right Left Case
+        }if (fatorbalanceamento > 1 && info.compareTo(node.getDir().getInfo()) < 0) { // Rotacao RL
             System.out.println("Realizando rotação RL apartir do nó "+ node.getInfo());
             aux = rightRotate(node.getDir());
             node.setDir(aux);
