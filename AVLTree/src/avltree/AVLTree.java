@@ -171,8 +171,6 @@ public class AVLTree<T extends Comparable<T>> {
         //verificar o fator de balanceamento (após remoção)
         int fatorbal = getBalance(raiz);
 
-        // If this node becomes unbalanced, then there are 4 cases
-
         return rebalancearRemocao(fatorbal, raiz);
     }
 
